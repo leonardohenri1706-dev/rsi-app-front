@@ -1,8 +1,10 @@
-import { Background } from "./components/Background";
+import { Background, Clipboard } from "./components";
 
 const Home = () => (
   <Background>
-    <h1>Home</h1>
+    <Clipboard>
+      <h1>Home</h1>
+    </Clipboard>
   </Background>
 );
 
