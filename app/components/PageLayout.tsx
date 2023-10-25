@@ -17,21 +17,21 @@ const LogoOnClipboard = () => (
     src="/logo_full.svg"
     objectFit="contain"
     quality={100}
-    height={250}
-    width={250}
+    height={200}
+    width={200}
   />
 );
 
-const PageLayout: React.FC<Props> = ({ title, children }) => (
+export const PageLayout: React.FC<Props> = ({ title, children }) => (
   <PageContextProvider title={title}>
     <Background>
       <Clipboard>
         <LogoOnClipboard />
 
-        {children}
+        <div className="absolute left-1/2 transform -translate-x-1/2 top-[10rem] w-full h-[80%] overflow-y-auto overflow-x-hidden z-1 px-[5rem] pt-[3rem]">
+          {children}
+        </div>
       </Clipboard>
     </Background>
   </PageContextProvider>
 );
-
-export default PageLayout;
