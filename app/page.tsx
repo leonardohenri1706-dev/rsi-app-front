@@ -1,7 +1,7 @@
 "use client";
 
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useMemo } from "react";
-import Link from "next/link";
 
 import { PageLayout } from "./components";
 import pages from "./routes";
@@ -10,16 +10,24 @@ const Home = () => {
   const Pages = useMemo(
     () =>
       pages.map(({ Component, path, name }) => (
-        <Link key={path} href={path}>
-          <PageLayout title={name}>
-            <Component />
-          </PageLayout>
-        </Link>
+        <Route
+          path={path}
+          key={path}
+          element={
+            <PageLayout title={name}>
+              <Component />
+            </PageLayout>
+          }
+        />
       )),
     []
   );
 
-  return <>{Pages}</>;
+  return (
+    <BrowserRouter>
+      <Routes>{Pages}</Routes>
+    </BrowserRouter>
+  );
 };
 
 export default Home;
