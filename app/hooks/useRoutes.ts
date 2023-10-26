@@ -7,7 +7,7 @@ export const useRoutes = () => {
     goToForgotPassword: () => navigate("/forgot-password"),
     goToNewPassword: () => navigate("/new-password"),
     goToRegister: () => navigate("/register"),
-    goToLogin: () => navigate("/login"),
+    goToLogin: () => navigate("/"),
     goToPatientType: () => navigate("/patient-type"),
     goToNotICURespiratoryTractCheckUp1: () =>
       navigate("/not-icu-respiratory-tract-check-up-1"),
