@@ -1,6 +1,9 @@
 import { InputWithLabel, Button } from "@/app/components";
+import { useRoutes } from "@/app/hooks";
 
 export const NewPassword: React.FC = () => {
+  const { goToLogin } = useRoutes();
+
   return (
     <>
       <div className="flex flex-col items-center justify-start w-full h-full gap-[2rem]">
@@ -18,7 +21,7 @@ export const NewPassword: React.FC = () => {
       </div>
 
       <div className="absolute flex items-center justify-around w-[79%] h-[5rem] bottom-[3rem]">
-        <Button label="Salvar" />
+        <Button label="Salvar" onClick={goToLogin} />
       </div>
     </>
   );

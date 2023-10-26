@@ -1,12 +1,8 @@
-import { useNavigate } from "react-router";
-
 import { InputWithLabel, Button } from "@/app/components";
+import { useRoutes } from "@/app/hooks";
 
 export const ForgotPassword: React.FC = () => {
-  const navigate = useNavigate();
-
-  const goBackToLogin = () => navigate("/");
-  const goToPatientType = () => navigate("/patient-type");
+  const { goToLogin, goToPatientType } = useRoutes();
 
   return (
     <>
@@ -15,7 +11,7 @@ export const ForgotPassword: React.FC = () => {
       </div>
 
       <div className="absolute flex items-center justify-around w-[79%] h-[5rem] bottom-[3rem]">
-        <Button label="Voltar" onClick={goBackToLogin} />
+        <Button label="Voltar" onClick={goToLogin} />
 
         <Button label="Enviar" onClick={goToPatientType} />
       </div>

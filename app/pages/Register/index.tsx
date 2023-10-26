@@ -1,16 +1,13 @@
-import { useNavigate } from "react-router";
 import { useState } from "react";
 
 import { InputWithLabel, Button, RadioWithLabel } from "@/app/components";
+import { useRoutes } from "@/app/hooks";
 
 export const Register: React.FC = () => {
-  const navigate = useNavigate();
+  const { goToLogin, goToPatientType } = useRoutes();
 
   const [profession, setProfession] = useState("");
   const [experience, setExperience] = useState("");
-
-  const goBackToLogin = () => navigate("/");
-  const goToPatientType = () => navigate("/patient-type");
 
   return (
     <>
@@ -47,7 +44,7 @@ export const Register: React.FC = () => {
       </div>
 
       <div className="absolute flex items-center justify-around w-[79%] h-[5rem] bottom-[3rem]">
-        <Button onClick={goBackToLogin} label="Voltar" />
+        <Button onClick={goToLogin} label="Voltar" />
 
         <Button onClick={goToPatientType} label="Entrar" />
       </div>
