@@ -37,7 +37,7 @@ export const InputWithLabel: React.FC<Props> = ({
 
   return (
     <div className="text-black text-[1.5rem] w-full relative">
-      <p className="ml-[1rem]">{label}</p>
+      <b className="ml-[1rem]">{label}</b>
 
       <input
         className="w-full h-[3rem] border-t-none border-l-none border-r-none border-b-2 border-black bg-[#E6E6E6] pl-[1rem] focus:outline-none focus:bg-[#EEE] rounded-md rounded-b-none"
