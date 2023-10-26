@@ -16,13 +16,13 @@ export const Login: React.FC = () => {
         />
       </BaseLayout.Content>
 
-      <BaseLayout.Root>
+      <BaseLayout.Buttons>
         <Button onClick={goToForgotPassword} label="Recuperar senha" />
 
         <Button onClick={goToRegister} label="Cadastro" />
 
         <Button onClick={goToPatientType} label="Entrar" />
-      </BaseLayout.Root>
+      </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
 };
