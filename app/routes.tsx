@@ -27,6 +27,11 @@ const pages: RouteProps[] = [
     name: "Cadastro",
     path: "/register",
   },
+  {
+    Component: Pages.PatientType,
+    name: "Tipo de paciente",
+    path: "/patient-type",
+  },
 ];
 
 export default pages;
