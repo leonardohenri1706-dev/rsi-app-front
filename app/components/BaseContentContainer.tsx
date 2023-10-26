@@ -8,7 +8,7 @@ export const BaseContentContainer: React.FC<Props> = ({
   className,
 }) => (
   <div
-    className={`flex flex-col items-center justify-start w-full h-full gap-[2rem] ${className}`}
+    className={`flex flex-col items-center justify-start w-full h-full gap-[2rem] pt-[3rem] ${className}`}
   >
     {children}
   </div>
