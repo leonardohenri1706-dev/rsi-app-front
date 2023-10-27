@@ -19,7 +19,7 @@ const tableData = [
 ];
 
 export const ICURespiratoryTractCheckUp1: React.FC = () => {
-  const { goToPatientType, goToNotICURespiratoryTractCheckUp2 } = useRoutes();
+  const { goToPatientType, goToICURespiratoryTractCheckUp2 } = useRoutes();
 
   const [macocha, setMacocha] = useState("");
 
@@ -64,7 +64,7 @@ export const ICURespiratoryTractCheckUp1: React.FC = () => {
       <BaseLayout.Buttons>
         <Button onClick={goToPatientType} label="Voltar" />
 
-        <Button onClick={goToNotICURespiratoryTractCheckUp2} label="Próximo" />
+        <Button onClick={goToICURespiratoryTractCheckUp2} label="Próximo" />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
