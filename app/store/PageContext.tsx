@@ -1,6 +1,9 @@
-import React, { createContext, useContext } from "react";
+import type { SetStateAction, Dispatch } from "react";
+import React, { useContext, createContext, useState } from "react";
 
 interface PageContextProps {
+  setPatientType: Dispatch<SetStateAction<PatientTypeEnum | null>>;
+  patientType: PatientTypeEnum | null;
   title: string;
 }
 
@@ -20,8 +23,15 @@ interface Props {
   title: string;
 }
 
+export enum PatientTypeEnum {
+  NOT_ICU = "Não UTI",
+  ICU = "UTI",
+}
+
 const PageContextProvider: React.FC<Props> = ({ children, title }) => {
-  const value: PageContextProps = { title };
+  const [patientType, setPatientType] = useState<PatientTypeEnum | null>(null);
+
+  const value: PageContextProps = { title, setPatientType, patientType };
 
   return <PageContext.Provider value={value}>{children}</PageContext.Provider>;
 };
