@@ -2,12 +2,12 @@ import { BaseLayout, Button } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
 export const RapidSequenceInductionTips: React.FC = () => {
-  const { goToPreOxygenation, goToAwakeIntubation } = useRoutes();
+  const { goToPreOxygenation, goToInternationalRecommendations } = useRoutes();
 
   return (
     <BaseLayout.Root>
       <BaseLayout.Content className="!justify-around !h-[80%] !pt-[0rem] !pb-[3rem]">
-        <div className="flex flex-row h-full w-full text-black text-[1.25rem] items-center justify-center">
+        <div className="flex flex-row h-full w-full text-black text-[0.9rem] md:text-[1rem] lg:text-[1.25rem] items-center justify-center">
           <div className="flex flex-col w-1/2 h-full justify-center gap-[2rem]">
             <span>
               <b>Doses para pacientes com 70kg:</b>
@@ -25,9 +25,9 @@ export const RapidSequenceInductionTips: React.FC = () => {
           </div>
 
           <div className="flex flex-col w-1/2 h-full justify-center">
-            <div className="flex flex-col w-fit h-fit justify-center gap-[2rem] bg-red-300 rounded-3xl p-8">
+            <div className="flex flex-col w-fit h-fit justify-center gap-[2rem] bg-red-300 rounded-3xl p-4 lg:p-8">
               <span>
-                <b>Atenção</b>
+                <b>Atenção:</b>
                 <p>
                   Se risco de estômago cheio e hipotensão {"\n"}
                   Hipnóticos podem ter efeito menor que 10 minutos (Refazer
@@ -36,7 +36,7 @@ export const RapidSequenceInductionTips: React.FC = () => {
               </span>
 
               <span>
-                <b>Cuidado</b>
+                <b>Cuidado:</b>
                 <p>
                   Paciente que acorda e faz respiração forçada com glote fechada
                   pode fazer edema agudo de pressão negativa
@@ -50,7 +50,7 @@ export const RapidSequenceInductionTips: React.FC = () => {
       <BaseLayout.Buttons>
         <Button onClick={goToPreOxygenation} label="Voltar" />
 
-        <Button onClick={goToAwakeIntubation} label="Próximo" />
+        <Button onClick={goToInternationalRecommendations} label="Próximo" />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
