@@ -8,7 +8,7 @@ export const BaseButtonsContainer: React.FC<Props> = ({
   className,
 }) => (
   <div
-    className={`absolute flex items-center justify-around w-[79%] h-[5rem] bottom-[3rem] ${className}`}
+    className={`absolute flex items-center justify-around w-[79%] h-[5rem] bottom-[3rem] px-[5rem] ${className}`}
   >
     {children}
   </div>

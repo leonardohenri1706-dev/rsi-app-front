@@ -25,7 +25,7 @@ export const PageLayout: React.FC<Props> = ({ title, children }) => (
 
             <LogoOnClipboard />
 
-            <div className="absolute left-1/2 transform -translate-x-1/2 top-[10rem] w-full h-[80%] overflow-y-auto overflow-x-hidden z-[3] px-[5rem]">
+            <div className="absolute left-1/2 transform -translate-x-1/2 top-[10rem] w-full h-[80%] overflow-y-auto overflow-x-hidden z-[3]">
               {children}
             </div>
           </Clipboard>
