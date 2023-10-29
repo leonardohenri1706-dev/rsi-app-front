@@ -12,4 +12,5 @@ export * from "./PreOxygenation";
 export * from "./RapidSequenceInduction";
 export * from "./AwakeIntubation";
 export * from "./InternationalRecommendations";
+export * from "./VortexScheme";
 export * from "./FlowChartGeneralVision";

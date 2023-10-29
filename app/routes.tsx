@@ -95,6 +95,12 @@ const pages: RouteProps[] = [
     indexed: true,
   },
   {
+    Component: Pages.VortexScheme,
+    name: "Esquema Vortex",
+    path: "/vortex-scheme",
+    indexed: true,
+  },
+  {
     Component: Pages.FlowChartGeneralVision,
     name: "Fluxograma - Visão Geral",
     path: "/flow-chart-general-vision",

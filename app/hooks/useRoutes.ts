@@ -23,6 +23,7 @@ export const useRoutes = () => {
     goToAwakeIntubation: () => navigate("/awake-intubation"),
     goToInternationalRecommendations: () =>
       navigate("/international-recommendations"),
+    goToVortexScheme: () => navigate("/vortex-scheme"),
     goToFlowChartGeneralVision: () => navigate("/flow-chart-general-vision"),
   };
 };
