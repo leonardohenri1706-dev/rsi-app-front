@@ -2,11 +2,11 @@ import { BaseLayout, Button } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
 export const InternationalRecommendations: React.FC = () => {
-  const { goToAwakeIntubation } = useRoutes();
+  const { goToAwakeIntubation, goToFlowChartGeneralVision } = useRoutes();
 
   return (
     <BaseLayout.Root>
-      <BaseLayout.Content className="!justify-around !h-[80%] !pt-[1rem] !pb-[3rem]">
+      <BaseLayout.Content className="!justify-around !h-[80%] !pt-[0rem] !pb-[3rem]">
         <div className="flex flex-col h-full w-full text-black font-[1.5rem] items-start justify-center gap-[1rem]">
           <p>
             Duas ou três tentativas com diferentes laringoscópios: comum,
@@ -32,7 +32,7 @@ export const InternationalRecommendations: React.FC = () => {
       <BaseLayout.Buttons>
         <Button onClick={goToAwakeIntubation} label="Voltar" />
 
-        <Button onClick={() => {}} label="Próximo" />
+        <Button onClick={goToFlowChartGeneralVision} label="Próximo" />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
