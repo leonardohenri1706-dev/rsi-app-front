@@ -39,7 +39,7 @@ export const ICURespiratoryTractCheckUp1: React.FC = () => {
 
   return (
     <BaseLayout.Root>
-      <BaseLayout.Content className="!h-[75%] overflow-x-hidden overflow-y-auto pb-[2rem] !gap-[1rem] !pt-[2rem]">
+      <BaseLayout.Content className="!h-[85%] !lg:h-[75%] pb-[2rem] !gap-[1rem] !pt-[2rem]">
         <InputWithLabel
           placeholder="Preencha de acordo com a tabela abaixo"
           label="Classificação MACOCHA"
@@ -47,18 +47,20 @@ export const ICURespiratoryTractCheckUp1: React.FC = () => {
           value={macocha}
         />
 
-        <table className="text-black w-full">
-          <thead className="text-[1.675rem]">
-            <tr className="border-b-2 border-black">
-              <th className="border-r border-black w-1/2 text-center">
-                Parâmetro
-              </th>
-              <th className="w-1/2 text-center">Pontuação</th>
-            </tr>
-          </thead>
+        <div className="lg:overflow-hidden overflow-y-auto">
+          <table className="text-black w-full">
+            <thead className="text-[1.675rem]">
+              <tr className="border-b-2 border-black">
+                <th className="border-r border-black w-1/2 text-center">
+                  Parâmetro
+                </th>
+                <th className="w-1/2 text-center">Pontuação</th>
+              </tr>
+            </thead>
 
-          <tbody className="text-[1.25rem]">{renderTableData}</tbody>
-        </table>
+            <tbody className="text-[1.25rem]">{renderTableData}</tbody>
+          </table>
+        </div>
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
