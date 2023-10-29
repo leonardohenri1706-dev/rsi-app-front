@@ -1,33 +1,9 @@
 "use client";
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { useMemo } from "react";
+import dynamic from "next/dynamic";
 
-import { PageLayout } from "./components";
-import pages from "./routes";
+const HomeWithNoSSR = dynamic(() => import("./home"), { ssr: false });
 
-const Home = () => {
-  const Pages = useMemo(
-    () =>
-      pages.map(({ Component, path, name }) => (
-        <Route
-          path={path}
-          key={path}
-          element={
-            <PageLayout title={name}>
-              <Component />
-            </PageLayout>
-          }
-        />
-      )),
-    []
-  );
-
-  return (
-    <BrowserRouter>
-      <Routes>{Pages}</Routes>
-    </BrowserRouter>
-  );
-};
+const Home = () => <HomeWithNoSSR />;
 
 export default Home;
