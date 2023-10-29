@@ -19,5 +19,6 @@ export const useRoutes = () => {
       navigate("/icu-respiratory-tract-check-up-2"),
     goToPositioning: () => navigate("/positioning"),
     goToPreOxygenation: () => navigate("/pre-oxygenation"),
+    goToRapidSequenceInduction: () => navigate("/rapid-sequence-induction"),
   };
 };

@@ -62,6 +62,11 @@ const pages: RouteProps[] = [
     name: "Pré-oxigenação",
     path: "/pre-oxygenation",
   },
+  {
+    Component: Pages.RapidSequenceInduction,
+    name: "Indução em sequência rápida",
+    path: "/rapid-sequence-induction",
+  },
 ];
 
 export default pages;

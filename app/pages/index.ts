@@ -9,3 +9,4 @@ export * from "./ICURespiratoryTractCheckUp1";
 export * from "./ICURespiratoryTractCheckUp2";
 export * from "./Positioning";
 export * from "./PreOxygenation";
+export * from "./RapidSequenceInduction";
