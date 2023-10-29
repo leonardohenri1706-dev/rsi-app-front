@@ -39,7 +39,7 @@ export const InputWithLabel: React.FC<Props> = ({
   const showIcon = password && isFocused;
 
   return (
-    <div className="text-black text-[1.5rem] w-full relative">
+    <div className="text-black text-[0.75rem] lg:text-[1.5rem] w-full relative">
       <b className="ml-[1rem]">{label}</b>
 
       <input
