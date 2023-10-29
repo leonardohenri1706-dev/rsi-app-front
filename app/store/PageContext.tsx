@@ -5,6 +5,8 @@ interface PageContextProps {
   setPatientType: Dispatch<SetStateAction<PatientTypeEnum | null>>;
   patientType: PatientTypeEnum | null;
   title: string;
+  setMenuIsOpen: Dispatch<SetStateAction<boolean>>;
+  menuIsOpen: boolean;
 }
 
 export const PageContext = createContext({} as PageContextProps);
@@ -30,8 +32,15 @@ export enum PatientTypeEnum {
 
 const PageContextProvider: React.FC<Props> = ({ children, title }) => {
   const [patientType, setPatientType] = useState<PatientTypeEnum | null>(null);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
 
-  const value: PageContextProps = { title, setPatientType, patientType };
+  const value: PageContextProps = {
+    title,
+    setPatientType,
+    patientType,
+    menuIsOpen,
+    setMenuIsOpen,
+  };
 
   return <PageContext.Provider value={value}>{children}</PageContext.Provider>;
 };
