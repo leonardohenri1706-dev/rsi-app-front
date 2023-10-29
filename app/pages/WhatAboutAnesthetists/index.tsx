@@ -7,7 +7,7 @@ export const WhatAboutAnesthetists: React.FC = () => {
   return (
     <BaseLayout.Root>
       <BaseLayout.Content className="!justify-around !h-[80%] !pt-[1rem] !pb-[3rem]">
-        <div className="flex flex-row h-full w-full text-black text-[1.25rem] items-center justify-center">
+        <div className="flex flex-row h-full w-full text-black text-[1rem] lg:text-[1.25rem] items-center justify-center lg:px-0 px-5">
           <p className="text-black">
             Não há grandes diferenças, apenas em cirurgias programadas a
             intubação pode ser cancelada (diferente de insuficiência
