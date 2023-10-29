@@ -18,6 +18,7 @@ const pages: RouteProps[] = [
     Component: Pages.Login,
     name: "Login",
     path: "/",
+    indexed: true,
   },
   {
     Component: Pages.NewPassword,
@@ -91,6 +92,12 @@ const pages: RouteProps[] = [
     Component: Pages.InternationalRecommendations,
     name: "Recomendações internacionais",
     path: "/international-recommendations",
+    indexed: true,
+  },
+  {
+    Component: Pages.FlowChartGeneralVision,
+    name: "Fluxograma - Visão Geral",
+    path: "/flow-chart-general-vision",
     indexed: true,
   },
 ];
