@@ -2,6 +2,7 @@ import * as Pages from "./pages";
 
 interface RouteProps {
   Component: React.PropsWithChildren<any>;
+  routerName: string;
   indexName?: string;
   indexed?: boolean;
   name: string;
@@ -13,27 +14,32 @@ const pages: RouteProps[] = [
     Component: Pages.ForgotPassword,
     name: "Recuperar senha",
     path: "/forgot-password",
+    routerName: "goToForgotPassword",
   },
   {
     Component: Pages.Login,
     name: "Login",
     path: "/",
+    routerName: "goToLogin",
     indexed: true,
   },
   {
     Component: Pages.NewPassword,
     name: "Mudar senha",
     path: "/new-password",
+    routerName: "goToNewPassword",
   },
   {
     Component: Pages.Register,
     name: "Cadastro",
     path: "/register",
+    routerName: "goToRegister",
   },
   {
     Component: Pages.PatientType,
     name: "Tipo de paciente",
     path: "/patient-type",
+    routerName: "goToPatientType",
     indexed: true,
   },
   {
@@ -41,6 +47,7 @@ const pages: RouteProps[] = [
     indexName: "Avaliação das vias aéreas não UTI 1",
     name: "Avaliação das vias aéreas",
     path: "/not-icu-respiratory-tract-check-up-1",
+    routerName: "goToNotICURespiratoryTractCheckUp1",
     indexed: true,
   },
   {
@@ -48,6 +55,7 @@ const pages: RouteProps[] = [
     indexName: "Avaliação das vias aéreas não UTI 2",
     name: "Avaliação das vias aéreas",
     path: "/not-icu-respiratory-tract-check-up-2",
+    routerName: "goToNotICURespiratoryTractCheckUp2",
     indexed: true,
   },
   {
@@ -55,6 +63,7 @@ const pages: RouteProps[] = [
     indexName: "Avaliação das vias aéreas UTI 1",
     name: "Avaliação das vias aéreas",
     path: "/icu-respiratory-tract-check-up-1",
+    routerName: "goToICURespiratoryTractCheckUp1",
     indexed: true,
   },
   {
@@ -62,48 +71,56 @@ const pages: RouteProps[] = [
     indexName: "Avaliação das vias aéreas UTI 2",
     name: "Avaliação das vias aéreas",
     path: "/icu-respiratory-tract-check-up-2",
+    routerName: "goToICURespiratoryTractCheckUp2",
     indexed: true,
   },
   {
     Component: Pages.Positioning,
     name: "Posicionamento",
     path: "/positioning",
+    routerName: "goToPositioning",
     indexed: true,
   },
   {
     Component: Pages.PreOxygenation,
     name: "Pré-oxigenação",
     path: "/pre-oxygenation",
+    routerName: "goToPreOxygenation",
     indexed: true,
   },
   {
-    Component: Pages.RapidSequenceInduction,
+    Component: Pages.RapidSequenceInductionTips,
     name: "Indução em sequência rápida",
-    path: "/rapid-sequence-induction",
+    path: "/rapid-sequence-induction-tips",
+    routerName: "goToRapidSequenceInductionTips",
     indexed: true,
   },
   {
     Component: Pages.AwakeIntubation,
     name: "Intubação acordado",
     path: "/awake-intubation",
+    routerName: "goToAwakeIntubation",
     indexed: true,
   },
   {
     Component: Pages.InternationalRecommendations,
     name: "Recomendações internacionais",
     path: "/international-recommendations",
+    routerName: "goToInternationalRecommendations",
     indexed: true,
   },
   {
     Component: Pages.VortexScheme,
     name: "Esquema Vortex",
     path: "/vortex-scheme",
+    routerName: "goToVortexScheme",
     indexed: true,
   },
   {
     Component: Pages.FlowChartGeneralVision,
     name: "Fluxograma - Visão Geral",
     path: "/flow-chart-general-vision",
+    routerName: "goToFlowChartGeneralVision",
     indexed: true,
   },
 ];
