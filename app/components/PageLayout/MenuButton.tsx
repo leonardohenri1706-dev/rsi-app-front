@@ -1,13 +1,22 @@
 import { AiOutlineMenuFold, AiOutlineMenuUnfold } from "react-icons/ai";
 
 import { usePageContext } from "@/app/store";
+import { useWindowSize } from "@/app/hooks";
+
+const icon = {
+  true: AiOutlineMenuUnfold,
+  false: AiOutlineMenuFold,
+};
 
 export const MenuButton: React.FC = () => {
   const { menuIsOpen, setMenuIsOpen } = usePageContext();
+  const { isMediumOrSmaller } = useWindowSize();
 
   const onClick = () => setMenuIsOpen((old) => !old);
 
-  const Icon = menuIsOpen ? AiOutlineMenuUnfold : AiOutlineMenuFold;
+  const iconKey = isMediumOrSmaller ? String(!menuIsOpen) : String(menuIsOpen);
+
+  const Icon = icon[iconKey as keyof typeof icon];
 
   return (
     <div
