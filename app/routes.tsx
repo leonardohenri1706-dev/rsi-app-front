@@ -170,7 +170,7 @@ const pages: RouteProps[] = [
   {
     Component: Pages.WhatAboutAnesthetists,
     name: "E para anestesistas?",
-    path: "/what-about-anesthetist",
+    path: "/what-about-anesthetists",
     routerName: "goToWhatAboutAnesthetists",
     indexed: true,
   },
