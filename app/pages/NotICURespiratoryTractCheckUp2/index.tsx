@@ -14,7 +14,7 @@ export const NotICURespiratoryTractCheckUp2: React.FC = () => {
 
   return (
     <BaseLayout.Root>
-      <BaseLayout.Content className="!h-[75%] overflow-x-hidden overflow-y-auto !pt-[0.25rem]">
+      <BaseLayout.Content className="!h-[75%] overflow-hidden !pt-[1rem] !lg:pt-[0.25rem]">
         <RadioWithLabelImageAndCaption
           label="Classificação de Mallampati"
           options={[
