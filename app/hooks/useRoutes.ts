@@ -20,5 +20,6 @@ export const useRoutes = () => {
     goToPositioning: () => navigate("/positioning"),
     goToPreOxygenation: () => navigate("/pre-oxygenation"),
     goToRapidSequenceInduction: () => navigate("/rapid-sequence-induction"),
+    goToAwakeIntubation: () => navigate("/awake-intubation"),
   };
 };

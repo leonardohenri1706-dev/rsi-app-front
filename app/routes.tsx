@@ -67,6 +67,11 @@ const pages: RouteProps[] = [
     name: "Indução em sequência rápida",
     path: "/rapid-sequence-induction",
   },
+  {
+    Component: Pages.AwakeIntubation,
+    name: "Intubação acordado",
+    path: "/awake-intubation",
+  },
 ];
 
 export default pages;
