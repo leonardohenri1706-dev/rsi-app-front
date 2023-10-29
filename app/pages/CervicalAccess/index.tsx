@@ -18,7 +18,7 @@ export const CervicalAccess: React.FC = () => {
   return (
     <BaseLayout.Root>
       <BaseLayout.Content className="!justify-around !h-[80%] !pt-[1rem] !pb-[3rem]">
-        <div className="flex flex-row h-full w-full text-black text-[1.5rem] items-center justify-center">
+        <div className="flex flex-row h-full w-full text-black text-[1rem] lg:text-[1.5rem] items-center justify-center lg:px-0 px-5">
           <ul className="flex flex-col w-full h-full justify-center gap-[4rem] list-disc">
             <li>
               <b>Cricotireoidostomia (não definitivo)</b>
