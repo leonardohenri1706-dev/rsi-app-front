@@ -1,8 +1,6 @@
 import { useState } from "react";
 
 import {
-  BaseContentContainer,
-  BaseButtonsContainer,
   InputWithLabel,
   RadioWithLabel,
   Button,
@@ -13,25 +11,43 @@ import { useRoutes } from "@/app/hooks";
 export const Register: React.FC = () => {
   const { goToLogin, goToPatientType } = useRoutes();
 
-  const [profession, setProfession] = useState("");
-  const [experience, setExperience] = useState("");
+  const [email, setEmail] = useState<string>("");
+  const [name, setName] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [passwordConfirmation, setPasswordConfirmation] = useState<string>("");
+  const [profession, setProfession] = useState<string>("");
+  const [experience, setExperience] = useState<string>("");
 
   return (
     <BaseLayout.Root>
       <BaseLayout.Content className="!h-[75%] overflow-x-hidden overflow-y-auto pb-[2rem]">
-        <InputWithLabel label="E-mail" placeholder="Preencha seu e-mail" />
-
-        <InputWithLabel label="Nome" placeholder="Preencha seu nome" />
+        <InputWithLabel
+          placeholder="Preencha seu e-mail"
+          onChange={setEmail}
+          value={email}
+          label="E-mail"
+        />
 
         <InputWithLabel
-          label="Senha"
+          placeholder="Preencha seu nome"
+          onChange={setName}
+          value={name}
+          label="Nome"
+        />
+
+        <InputWithLabel
           placeholder="Preencha sua senha"
+          onChange={setPassword}
+          value={password}
+          label="Senha"
           password
         />
 
         <InputWithLabel
-          label="Confirmação da senha"
           placeholder="Confirme sua senha"
+          label="Confirmação da senha"
+          onChange={setPasswordConfirmation}
+          value={passwordConfirmation}
           password
         />
 
