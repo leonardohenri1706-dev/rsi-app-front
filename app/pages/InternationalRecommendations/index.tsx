@@ -7,7 +7,7 @@ export const InternationalRecommendations: React.FC = () => {
   return (
     <BaseLayout.Root>
       <BaseLayout.Content className="!justify-around !h-[80%] !pt-[0rem] !pb-[3rem]">
-        <div className="flex flex-col h-full w-full text-black font-[1.5rem] items-start justify-center gap-[1rem]">
+        <div className="flex flex-col h-full w-full text-black text-[1.25rem] items-start justify-center gap-[1rem]">
           <p>
             Duas ou três tentativas com diferentes laringoscópios: comum,
             videolaringoscópio, etc
