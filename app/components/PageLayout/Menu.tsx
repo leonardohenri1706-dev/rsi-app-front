@@ -1,10 +1,9 @@
-import { useNavigate } from "react-router";
-
 import { usePageContext } from "@/app/store";
 import { useWindowSize } from "@/app/hooks";
 import pages from "@/app/routes";
 
 import { clipBoardStyling } from "./Clipboard";
+import { MenuIndexItem } from "./MenuIndexItem";
 
 const indexedPages = pages.filter((page) => page.indexed);
 
@@ -20,20 +19,12 @@ const getMenuOpenClassName = (
 
 export const Menu: React.FC = () => {
   const { isMediumOrSmaller } = useWindowSize();
-  const navigate = useNavigate();
-
   const { menuIsOpen } = usePageContext();
 
   const menuOpenClassName = getMenuOpenClassName(menuIsOpen, isMediumOrSmaller);
 
   const renderIndexItems = indexedPages.map((page) => (
-    <li
-      className="text-[1rem] cursor-pointer hover:text-[#01967F] transition-all underline"
-      onClick={() => navigate(page.path)}
-      key={page.path}
-    >
-      {page.indexName ?? page.name}
-    </li>
+    <MenuIndexItem page={page} key={page.path} />
   ));
 
   const zIndexClassName = isMediumOrSmaller ? "!z-[5]" : "!z-[1]";
