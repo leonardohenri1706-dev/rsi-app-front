@@ -1,18 +1,30 @@
 import { useNavigate } from "react-router";
 
 import { usePageContext } from "@/app/store";
+import { useWindowSize } from "@/app/hooks";
+import pages from "@/app/routes";
 
 import { clipBoardStyling } from "./Clipboard";
-import pages from "@/app/routes";
 
 const indexedPages = pages.filter((page) => page.indexed);
 
+const getMenuOpenClassName = (
+  menuIsOpen: boolean,
+  isMediumOrSmaller: boolean
+) => {
+  if (!isMediumOrSmaller)
+    return menuIsOpen ? "translate-x-0" : "translate-x-full";
+
+  return menuIsOpen ? "translate-x-0" : "-translate-x-full";
+};
+
 export const Menu: React.FC = () => {
+  const { isMediumOrSmaller } = useWindowSize();
   const navigate = useNavigate();
 
   const { menuIsOpen } = usePageContext();
 
-  const menuOpenClassName = menuIsOpen ? "translate-x-0" : "translate-x-full";
+  const menuOpenClassName = getMenuOpenClassName(menuIsOpen, isMediumOrSmaller);
 
   const renderIndexItems = indexedPages.map((page) => (
     <li
@@ -24,15 +36,18 @@ export const Menu: React.FC = () => {
     </li>
   ));
 
+  const zIndexClassName = isMediumOrSmaller ? "!z-[5]" : "!z-[1]";
+  const paddingRightClassName = isMediumOrSmaller ? "pr-[1rem]" : "pr-[5rem]";
+
   return (
     <div
       className={`
-        ${clipBoardStyling.className} 
+        ${clipBoardStyling.className} ${zIndexClassName}
         ${menuOpenClassName} transition-all duration-500
-        !absolute top-[2.5rem] -left-[20rem] !z-[1]
+        py-[1rem] pl-[1rem] ${paddingRightClassName}
+        lg:top-[2.5rem] lg:-left-[20rem] top-[4rem] left-[0]
         flex flex-col justify-start items-center
-        py-[1rem] pl-[1rem] pr-[5rem]
-        !w-[25rem] !h-[45rem] 
+        !w-[25rem] !h-[42rem] !lg:h-[45rem] !absolute
         text-black
       `}
       style={clipBoardStyling.style}
@@ -41,7 +56,7 @@ export const Menu: React.FC = () => {
         Índice
       </b>
 
-      <ul className="flex flex-col justify-start items-start w-full h-full gap-[0.5rem] overflow-y-auto list-inside list-disc">
+      <ul className="flex flex-col justify-start items-start w-full h-full gap-[0.5rem] overflow-y-auto lg:overflow-hidden lg:hover:overflow-y-auto list-inside list-disc">
         {renderIndexItems}
       </ul>
     </div>
