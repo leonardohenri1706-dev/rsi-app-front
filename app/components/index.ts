@@ -7,3 +7,4 @@ export * from "./BaseButtonsContainer";
 export * from "./BaseLayout";
 export * from "./RadioWithLabelImageAndCaption";
 export * from "./ImageWithLabelAndCaptionOption";
+export * from "./FlowChartQuestion";
