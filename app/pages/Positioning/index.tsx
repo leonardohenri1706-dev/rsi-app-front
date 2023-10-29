@@ -26,6 +26,7 @@ export const Positioning: React.FC = () => {
   const {
     goToNotICURespiratoryTractCheckUp2,
     goToICURespiratoryTractCheckUp2,
+    goToPreOxygenation,
   } = useRoutes();
   const { patientType } = usePageContext();
 
@@ -55,7 +56,7 @@ export const Positioning: React.FC = () => {
       <BaseLayout.Buttons>
         <Button onClick={goBack} label="Voltar" />
 
-        <Button onClick={() => {}} label="Próximo" />
+        <Button onClick={goToPreOxygenation} label="Próximo" />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
