@@ -2,7 +2,7 @@ import { BaseLayout, Button } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
 export const RapidSequenceInductionTips: React.FC = () => {
-  const { goToPreOxygenation, goToInternationalRecommendations } = useRoutes();
+  const { goToCervicalAccess, goToSummaryVideo } = useRoutes();
 
   return (
     <BaseLayout.Root>
@@ -48,9 +48,9 @@ export const RapidSequenceInductionTips: React.FC = () => {
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goToPreOxygenation} label="Voltar" />
+        <Button onClick={goToCervicalAccess} label="Voltar" />
 
-        <Button onClick={goToInternationalRecommendations} label="Próximo" />
+        <Button onClick={goToSummaryVideo} label="Próximo" />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
