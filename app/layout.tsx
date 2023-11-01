@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   title: "RSI app - Manejo de vias aéreas",
   description:
     "Aplicativo para auxiliar em manejo de vias aéreas com Rápida Sequência de Intubação",
+  creator: "Plínio Holanda",
+  authors: [{ name: "Rômulo Iorio", url: "https://github.com/romulo-iorio" }],
 };
 
 interface Props {
