@@ -1,8 +1,9 @@
 import { BaseLayout, Button } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
-export const PreOxygenation: React.FC = () => {
-  const { goToPositioning, goToRapidSequenceInductionTips } = useRoutes();
+export const SummaryVideo: React.FC = () => {
+  const { goToRapidSequenceInductionTips, goToWhatAboutAnesthetists } =
+    useRoutes();
 
   return (
     <BaseLayout.Root>
@@ -13,9 +14,9 @@ export const PreOxygenation: React.FC = () => {
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goToPositioning} label="Voltar" />
+        <Button onClick={goToRapidSequenceInductionTips} label="Voltar" />
 
-        <Button onClick={goToRapidSequenceInductionTips} label="Próximo" />
+        <Button onClick={goToWhatAboutAnesthetists} label="Próximo" />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
