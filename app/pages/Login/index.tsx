@@ -4,14 +4,15 @@ import { InputWithLabel, BaseLayout, Button } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
 export const Login: React.FC = () => {
-  const { goToForgotPassword, goToRegister, goToPatientType } = useRoutes();
+  const { goToRespiratoryTractCheckUp, goToForgotPassword, goToRegister } =
+    useRoutes();
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
   return (
     <BaseLayout.Root>
-      <BaseLayout.Content>
+      <BaseLayout.Content className="!pt-[6rem]">
         <InputWithLabel
           placeholder="Preencha seu e-mail"
           onChange={setEmail}
@@ -33,7 +34,7 @@ export const Login: React.FC = () => {
 
         <Button onClick={goToRegister} label="Cadastro" />
 
-        <Button onClick={goToPatientType} label="Entrar" />
+        <Button onClick={goToRespiratoryTractCheckUp} label="Entrar" />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
