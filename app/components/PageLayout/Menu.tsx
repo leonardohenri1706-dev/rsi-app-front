@@ -11,10 +11,10 @@ const getMenuOpenClassName = (
   menuIsOpen: boolean,
   isMediumOrSmaller: boolean
 ) => {
-  if (!isMediumOrSmaller)
-    return menuIsOpen ? "translate-x-0" : "translate-x-full";
+  if (isMediumOrSmaller)
+    return menuIsOpen ? "translate-x-0" : "-translate-x-full";
 
-  return menuIsOpen ? "translate-x-0" : "-translate-x-full";
+  return menuIsOpen ? "-translate-x-full" : "translate-x-0";
 };
 
 export const Menu: React.FC = () => {
@@ -36,8 +36,8 @@ export const Menu: React.FC = () => {
         ${clipBoardStyling.className} ${zIndexClassName}
         !w-full md:lg:!w-[25rem] h-[38rem] md:!h-[36rem] !lg:h-[30rem] !absolute
         lg:top-[2.5rem] md:top-[6rem] top-[6rem]
-        lg:-left-[20rem] left-[0]
-        ${menuOpenClassName} transition-all duration-500
+        lg:left-[5rem] left-[0]
+        ${menuOpenClassName} duration-500 transition-[transform]
         py-[1rem] pl-[1rem] ${paddingRightClassName}
         flex flex-col justify-start items-center
         text-black

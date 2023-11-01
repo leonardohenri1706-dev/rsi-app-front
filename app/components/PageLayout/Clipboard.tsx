@@ -16,7 +16,10 @@ export const clipBoardStyling = {
 };
 
 export const Clipboard = ({ children }: Props) => {
-  const { title } = usePageContext();
+  const { title: contextTitle } = usePageContext();
+
+  const isCover = contextTitle === "Capa";
+  const title = isCover ? "Login" : contextTitle;
 
   return (
     <div
