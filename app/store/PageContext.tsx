@@ -7,6 +7,8 @@ interface PageContextProps {
   title: string;
   setMenuIsOpen: Dispatch<SetStateAction<boolean>>;
   menuIsOpen: boolean;
+  setLastPage: Dispatch<SetStateAction<string>>;
+  lastPage: string;
 }
 
 export const PageContext = createContext({} as PageContextProps);
@@ -33,6 +35,7 @@ export enum PatientTypeEnum {
 const PageContextProvider: React.FC<Props> = ({ children, title }) => {
   const [patientType, setPatientType] = useState<PatientTypeEnum | null>(null);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [lastPage, setLastPage] = useState<string>("");
 
   const value: PageContextProps = {
     title,
@@ -40,6 +43,8 @@ const PageContextProvider: React.FC<Props> = ({ children, title }) => {
     patientType,
     menuIsOpen,
     setMenuIsOpen,
+    setLastPage,
+    lastPage,
   };
 
   return <PageContext.Provider value={value}>{children}</PageContext.Provider>;
