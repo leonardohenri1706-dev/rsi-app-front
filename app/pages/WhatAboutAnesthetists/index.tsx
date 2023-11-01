@@ -2,7 +2,7 @@ import { BaseLayout, Button } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
 export const WhatAboutAnesthetists: React.FC = () => {
-  const { goBack } = useRoutes();
+  const { goToSummaryVideo } = useRoutes();
 
   return (
     <BaseLayout.Root>
@@ -19,7 +19,7 @@ export const WhatAboutAnesthetists: React.FC = () => {
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goBack} label="Voltar" />
+        <Button onClick={goToSummaryVideo} label="Voltar" />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
