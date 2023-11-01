@@ -2,7 +2,7 @@ import { BaseLayout, Button } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
 export const InternationalRecommendations: React.FC = () => {
-  const { goToAwakeIntubation, goToVortexScheme } = useRoutes();
+  const { goToPositioning, goToVortexScheme } = useRoutes();
 
   return (
     <BaseLayout.Root>
@@ -30,7 +30,7 @@ export const InternationalRecommendations: React.FC = () => {
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goToAwakeIntubation} label="Voltar" />
+        <Button onClick={goToPositioning} label="Voltar" />
 
         <Button onClick={goToVortexScheme} label="Próximo" />
       </BaseLayout.Buttons>
