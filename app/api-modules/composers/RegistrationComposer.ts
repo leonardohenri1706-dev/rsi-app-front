@@ -1,10 +1,10 @@
-import { CryptoService, UsersRepository, getDb } from "../infra";
+import { CryptoService, UserRepository, getDb } from "../infra";
 import { RegistrationUseCase } from "../applications";
 
 export class RegistrationComposer {
   static async compose() {
     return new RegistrationUseCase(
-      new UsersRepository(await getDb()),
+      new UserRepository(await getDb()),
       new CryptoService()
     );
   }

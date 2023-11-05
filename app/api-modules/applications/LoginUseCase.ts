@@ -1,4 +1,4 @@
-import type { CryptoService, JwtService, UsersRepository } from "../infra";
+import type { CryptoService, JwtService, UserRepository } from "../infra";
 import type { LoginBody } from "../presentation/validators";
 
 interface Return {
@@ -7,7 +7,7 @@ interface Return {
 
 export class LoginUseCase {
   constructor(
-    private readonly userRepository: UsersRepository,
+    private readonly userRepository: UserRepository,
     private readonly cryptoService: CryptoService,
     private readonly JwtService: JwtService
   ) {}

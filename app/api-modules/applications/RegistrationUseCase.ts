@@ -1,10 +1,10 @@
 import type { RegistrationBody } from "../presentation/validators";
-import type { CryptoService, UsersRepository } from "../infra";
+import type { CryptoService, UserRepository } from "../infra";
 import type { User } from "../domain/entities";
 
 export class RegistrationUseCase {
   constructor(
-    private readonly userRepository: UsersRepository,
+    private readonly userRepository: UserRepository,
     private readonly cryptoService: CryptoService
   ) {}
 

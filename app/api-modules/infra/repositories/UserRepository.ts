@@ -2,7 +2,7 @@ import type { Collection, Db } from "mongodb";
 
 import type { User } from "../../domain/entities/User";
 
-export class UsersRepository {
+export class UserRepository {
   private collection: Collection<User>;
 
   constructor(db: Db) {
