@@ -18,7 +18,7 @@ const bodyValidation = z.object({
   password: z.string(),
   name: z.string(),
   profession: z.enum([professionEnum[0], ...professionEnum]),
-  intubationExperience: z.enum([
+  intubation_experience: z.enum([
     intubationExperienceEnum[0],
     ...intubationExperienceEnum,
   ]),
