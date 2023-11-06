@@ -1,36 +1,32 @@
-import { useState } from "react";
-
 import { InputWithLabel, BaseLayout, Button } from "@/app/components";
-import { useRoutes } from "@/app/hooks";
+
+import { useResetPassword } from "./hooks";
 
 export const NewPassword: React.FC = () => {
-  const { goToLogin } = useRoutes();
-
-  const [password, setPassword] = useState<string>("");
-  const [passwordConfirmation, setPasswordConfirmation] = useState<string>("");
+  const { doResetPassword, getField, setField } = useResetPassword();
 
   return (
     <BaseLayout.Root>
       <BaseLayout.Content>
         <InputWithLabel
           placeholder="Preencha sua nova senha"
-          onChange={setPassword}
-          value={password}
-          label="Senha"
+          onChange={(v) => setField("password", v)}
+          value={String(getField("password"))}
+          label="Senha *"
           password
         />
 
         <InputWithLabel
           placeholder="Confirme sua nova senha"
-          onChange={setPasswordConfirmation}
-          value={passwordConfirmation}
-          label="Confirmação da senha"
+          onChange={(v) => setField("passwordConfirmation", v)}
+          value={String(getField("passwordConfirmation"))}
+          label="Confirmação da senha *"
           password
         />
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button label="Salvar" onClick={goToLogin} />
+        <Button label="Salvar" onClick={doResetPassword} />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
