@@ -12,9 +12,9 @@ const RegistrationErrorMessages = {
   USER_WITH_EMAIL_EXISTS: "Já existe um usuário com esse e-mail",
 };
 
-type LoginErrorType = keyof typeof RegistrationErrorMessages;
+type RegistrationErrorType = keyof typeof RegistrationErrorMessages;
 
-const defaultErrorMessage = "Falha ao realizar login!";
+const defaultErrorMessage = "Falha ao realizar cadastro!";
 
 export const useRegistration = () => {
   const { goToRespiratoryTractCheckUp } = useRoutes();
@@ -36,8 +36,8 @@ export const useRegistration = () => {
     const registrationPromise = registration(data);
 
     toast.promise(registrationPromise, {
-      success: "Registro realizado com sucesso! Redirecionando...",
-      pending: "Realizando Login...",
+      success: "Cadastro realizado com sucesso! Redirecionando...",
+      pending: "Realizando cadastro...",
     });
 
     try {
@@ -47,16 +47,16 @@ export const useRegistration = () => {
 
       setTimeout(() => goToRespiratoryTractCheckUp(), 1000);
     } catch (err) {
-      const error = err as AxiosError<ApiError<LoginErrorType>>;
+      const error = err as AxiosError<ApiError<RegistrationErrorType>>;
       const { type = "" } =
-        error.response?.data || ({} as ApiError<LoginErrorType>);
+        error.response?.data || ({} as ApiError<RegistrationErrorType>);
 
       const isKnownError = Object.keys(RegistrationErrorMessages).includes(
-        type as LoginErrorType
+        type as RegistrationErrorType
       );
 
       const errorMessage = isKnownError
-        ? RegistrationErrorMessages[type as LoginErrorType]
+        ? RegistrationErrorMessages[type as RegistrationErrorType]
         : defaultErrorMessage;
 
       toast.error(errorMessage);
