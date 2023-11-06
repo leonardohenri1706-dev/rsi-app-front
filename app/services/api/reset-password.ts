@@ -1,10 +1,13 @@
 import api from "./api";
 
-interface Body {
+export interface ResetPasswordBody {
+  passwordConfirmation: string;
   password: string;
   token: string;
 }
 
-export const resetPassword = async (body: Body) => {
+export const resetPassword = async (bodyParam: ResetPasswordBody) => {
+  const { passwordConfirmation: _, ...body } = bodyParam;
+
   return api.post("/reset-password", body);
 };
