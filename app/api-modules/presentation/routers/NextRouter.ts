@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 import { getRequestBody } from "@/app/utils/getRequestBody";
 
-const { API_AUTHENTICATION = "" } = process.env;
+const { NEXT_PUBLIC_API_AUTHENTICATION: authToken = "" } = process.env;
 
 interface UseCase {
   execute: (input: any) => Promise<any>;
@@ -24,7 +24,7 @@ export class NextRouter {
       const authorization = request.headers.get("authorization");
 
       const token = authorization?.replace("Bearer ", "");
-      const isTokenValid = token && token === API_AUTHENTICATION;
+      const isTokenValid = token && token === authToken;
 
       if (!isTokenValid) {
         throw {
