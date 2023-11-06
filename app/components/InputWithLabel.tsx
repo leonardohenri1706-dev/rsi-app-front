@@ -53,9 +53,10 @@ export const InputWithLabel: React.FC<Props> = ({
 
       {showIcon ? (
         <Icon
-          className="absolute right-[0.5rem] top-[3.125rem] cursor-pointer text-[#010101] hover:text-[#555] transition-all"
+          className="absolute right-[0.5rem] top-[2.125rem] cursor-pointer text-[#010101] hover:text-[#555] transition-all"
           onMouseDown={onClickEye}
           onClick={onClickEye}
+          size={32}
         />
       ) : null}
     </div>
