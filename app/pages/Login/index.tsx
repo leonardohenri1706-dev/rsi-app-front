@@ -16,7 +16,7 @@ export const Login: React.FC = () => {
         <InputWithLabel
           placeholder="Preencha seu e-mail"
           onChange={setEmail}
-          label="E-mail"
+          label="E-mail *"
           value={email}
         />
 
@@ -24,7 +24,7 @@ export const Login: React.FC = () => {
           placeholder="Preencha sua senha"
           onChange={setPassword}
           value={password}
-          label="Senha"
+          label="Senha *"
           password
         />
       </BaseLayout.Content>
