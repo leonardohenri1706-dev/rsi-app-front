@@ -8,10 +8,7 @@ import { useLogin } from "./hooks";
 export const Login: React.FC = () => {
   const { goToForgotPassword, goToRegistration } = useRoutes();
 
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-
-  const login = useLogin({ email, password });
+  const { email, doLogin, password, setEmail, setPassword } = useLogin();
 
   return (
     <BaseLayout.Root>
@@ -37,7 +34,7 @@ export const Login: React.FC = () => {
 
         <Button onClick={goToRegistration} label="Cadastro" />
 
-        <Button onClick={() => login()} label="Entrar" />
+        <Button onClick={doLogin} label="Entrar" />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );

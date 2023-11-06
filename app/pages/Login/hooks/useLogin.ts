@@ -1,9 +1,10 @@
 import type { AxiosError } from "axios";
 import { toast } from "react-toastify";
 
-import type { LoginBody } from "@/app/services/api/login";
+import type { ApiError } from "@/app/services/api/interfaces";
 import { login } from "@/app/services/api/login";
 import { useRoutes } from "@/app/hooks";
+import { useState } from "react";
 
 const LoginErrorMessages = {
   USER_DOES_NOT_EXIST: "Não existe um usuário com esse e-mail",
@@ -12,19 +13,16 @@ const LoginErrorMessages = {
 
 type LoginErrorType = keyof typeof LoginErrorMessages;
 
-interface LoginError {
-  type: LoginErrorType;
-  status: number;
-  cause: string;
-}
-
 const defaultErrorMessage = "Falha ao realizar login!";
 
-export const useLogin = (loginData: LoginBody) => {
+export const useLogin = () => {
   const { goToRespiratoryTractCheckUp } = useRoutes();
 
-  return async () => {
-    const loginPromise = login(loginData);
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+
+  const doLogin = async () => {
+    const loginPromise = login({ email, password });
 
     toast.promise(loginPromise, {
       success: "Login realizado com sucesso! Redirecionando...",
@@ -36,14 +34,15 @@ export const useLogin = (loginData: LoginBody) => {
 
       window.localStorage.setItem("token", token);
 
-      setTimeout(() => {
-        goToRespiratoryTractCheckUp();
-      }, 1000);
+      setTimeout(() => goToRespiratoryTractCheckUp(), 1000);
     } catch (err) {
-      const error = err as AxiosError<LoginError>;
-      const { type = "" } = error.response?.data || {};
+      const error = err as AxiosError<ApiError<LoginErrorType>>;
+      const { type = "" } =
+        error.response?.data || ({} as ApiError<LoginErrorType>);
 
-      const isKnownError = Object.keys(LoginErrorMessages).includes(type);
+      const isKnownError = Object.keys(LoginErrorMessages).includes(
+        type as LoginErrorType
+      );
 
       const errorMessage = isKnownError
         ? LoginErrorMessages[type as LoginErrorType]
@@ -52,4 +51,6 @@ export const useLogin = (loginData: LoginBody) => {
       toast.error(errorMessage);
     }
   };
+
+  return { email, password, setEmail, setPassword, doLogin };
 };
