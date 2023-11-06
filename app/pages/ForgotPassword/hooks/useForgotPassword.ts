@@ -33,7 +33,10 @@ export const useForgotPassword = () => {
     try {
       await forgotPasswordPromise;
 
-      setTimeout(() => goToLogin(), 1000);
+      setTimeout(() => {
+        window.history.replaceState({}, "", "/");
+        goToLogin();
+      }, 1000);
     } catch (err) {
       const error = err as AxiosError<ApiError<ForgotPasswordErrorType>>;
       const { type = "" } =
