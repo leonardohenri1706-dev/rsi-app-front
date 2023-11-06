@@ -1,5 +1,6 @@
 interface Props {
   onChange: (newValue: string) => void;
+  optionLabels?: string[];
   options: string[];
   label: string;
   value: string;
@@ -7,11 +8,17 @@ interface Props {
 
 interface OptionProps {
   onChange: (newValue: string) => void;
+  optionLabel?: string;
   option: string;
   value: string;
 }
 
-const Option: React.FC<OptionProps> = ({ option, value, onChange }) => {
+const Option: React.FC<OptionProps> = ({
+  option,
+  optionLabel,
+  value,
+  onChange,
+}) => {
   const checkedText = option === value ? "( X )" : "( )";
 
   return (
@@ -21,20 +28,31 @@ const Option: React.FC<OptionProps> = ({ option, value, onChange }) => {
     >
       <p>{checkedText}</p>
 
-      <p>{option}</p>
+      <p>{optionLabel ?? option}</p>
     </span>
   );
 };
 
 export const RadioWithLabel: React.FC<Props> = ({
+  optionLabels,
   onChange,
   options,
   label,
   value,
 }) => {
-  const renderOptions = options.map((option) => (
-    <Option option={option} value={value} onChange={onChange} key={option} />
-  ));
+  const renderOptions = options.map((option, index) => {
+    const optionLabel = optionLabels?.[index];
+
+    return (
+      <Option
+        optionLabel={optionLabel}
+        onChange={onChange}
+        option={option}
+        value={value}
+        key={option}
+      />
+    );
+  });
 
   return (
     <div className="text-black text-[1rem] lg:text-[1rem] w-full relative">
