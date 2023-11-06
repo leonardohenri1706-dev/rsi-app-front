@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import {
   BaseContentContainer,
   BaseButtonsContainer,
@@ -7,11 +5,12 @@ import {
   Button,
 } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
+import { useForgotPassword } from "./hooks";
 
 export const ForgotPassword: React.FC = () => {
   const { goToLogin } = useRoutes();
 
-  const [email, setEmail] = useState<string>("");
+  const { doForgotPassword, email, setEmail } = useForgotPassword();
 
   return (
     <>
@@ -19,7 +18,7 @@ export const ForgotPassword: React.FC = () => {
         <InputWithLabel
           placeholder="Preencha seu e-mail"
           onChange={setEmail}
-          label="E-mail"
+          label="E-mail *"
           value={email}
         />
       </BaseContentContainer>
@@ -27,7 +26,7 @@ export const ForgotPassword: React.FC = () => {
       <BaseButtonsContainer>
         <Button label="Voltar" onClick={goToLogin} />
 
-        <Button label="Enviar" onClick={goToLogin} />
+        <Button label="Enviar" onClick={doForgotPassword} />
       </BaseButtonsContainer>
     </>
   );
