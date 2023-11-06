@@ -2,11 +2,20 @@ import type { User } from "@/app/interfaces";
 
 import api from "./api";
 
-interface Body extends User {
+export interface RegistrationBody extends User {
+  passwordConfirmation: string;
   password: string;
 }
 
-export const registration = async (body: Body): Promise<User> => {
-  const result = await api.post<User>("/registration", body);
+interface RegistrationResponse extends User {
+  token: string;
+}
+
+export const registration = async (
+  bodyParam: RegistrationBody
+): Promise<RegistrationResponse> => {
+  const { passwordConfirmation, ...body } = bodyParam;
+
+  const result = await api.post<RegistrationResponse>("/registration", body);
   return result.data;
 };
