@@ -24,10 +24,13 @@ interface Return {
   goToAfterAnesthesicInduction: () => void;
   goToLaryngealMask: () => void;
   goToCervicalAccess: () => void;
+  goToCervicalAccessVideo: () => void;
   goToRapidSequenceInductionTips: () => void;
   goToFlowChartGeneralVision: () => void;
   goToSummaryVideo: () => void;
   goToWhatAboutAnesthetists: () => void;
+  goToAboutTheAuthor: () => void;
+  goToReferences: () => void;
 }
 
 export const useRoutes = (): Return => {
