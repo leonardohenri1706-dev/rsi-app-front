@@ -34,12 +34,10 @@ export class RegistrationUseCase {
 
     const intubation_experience =
       input.intubation_experience as User["intubation_experience"];
-    const profession = input.profession as User["profession"];
 
     const user = {
       intubation_experience,
       cryptographic_salt,
-      profession,
       password,
       email,
       name,
