@@ -4,7 +4,7 @@ import {
   BaseLayout,
   Button,
 } from "@/app/components";
-import { IntubationExperience, UserProfession } from "@/app/interfaces";
+import { IntubationExperience } from "@/app/interfaces";
 import { useRoutes } from "@/app/hooks";
 
 import { useRegistration } from "./hooks";
@@ -45,14 +45,6 @@ export const Registration: React.FC = () => {
           onChange={(v) => setField("passwordConfirmation", v)}
           value={String(getField("passwordConfirmation"))}
           password
-        />
-
-        <RadioWithLabel
-          options={[UserProfession.DOCTOR, UserProfession.MEDICINE_STUDENT]}
-          optionLabels={["Médico", "Estudante de medicina"]}
-          onChange={(v) => setField("profession", v)}
-          value={String(getField("profession"))}
-          label="Profissão *"
         />
 
         <RadioWithLabel
