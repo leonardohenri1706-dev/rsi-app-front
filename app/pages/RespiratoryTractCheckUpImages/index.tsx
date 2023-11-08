@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import {
   ImageWithLabelAndCaptionOption,
   BaseLayout,
@@ -26,7 +24,7 @@ export const RespiratoryTractCheckUpImages: React.FC = () => {
       withCheckedText={false}
       key={option.label}
       option={option}
-      size={120}
+      size={110}
     />
   ));
 
