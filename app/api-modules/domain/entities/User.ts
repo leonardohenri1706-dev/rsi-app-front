@@ -1,8 +1,3 @@
-export enum UserProfession {
-  MEDICINE_STUDENT = "medicine_student",
-  DOCTOR = "doctor",
-}
-
 export enum IntubationExperience {
   MORE_THAN_50 = "more_than_50",
   BETWEEN_20_AND_50 = "between_20_and_50",
@@ -14,7 +9,6 @@ export interface User {
   email: string;
   password: string;
   name: string;
-  profession: UserProfession;
   intubation_experience: IntubationExperience;
   cryptographic_salt: string;
   //   readonly createdAt: Date;
