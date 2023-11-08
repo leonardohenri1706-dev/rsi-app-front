@@ -25,7 +25,5 @@ export const validateData = (data: RegistrationBody | null) => {
   if (!data?.intubation_experience)
     errors.intubation_experience = "Experiência em intubação é obrigatória";
 
-  if (!data?.profession) errors.profession = "Profissão é obrigatória";
-
   return errors;
 };
