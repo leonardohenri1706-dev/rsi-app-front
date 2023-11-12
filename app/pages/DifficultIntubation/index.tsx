@@ -5,11 +5,8 @@ export const flowChartOptionsButtonsClassName =
   "!lg:w-[15rem] !lg:h-[5rem] !w-[12rem] !h-[4rem]";
 
 export const DifficultIntubation: React.FC = () => {
-  const {
-    goToFlowChartGeneralVision,
-    goToRapidSequenceInduction,
-    goToDifficultVentilation,
-  } = useRoutes();
+  const { goToLogin, goToRapidSequenceInduction, goToDifficultVentilation } =
+    useRoutes();
 
   return (
     <BaseLayout.Root>
@@ -32,7 +29,7 @@ export const DifficultIntubation: React.FC = () => {
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goToFlowChartGeneralVision} label="Voltar" />
+        <Button onClick={goToLogin} label="Voltar" />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
