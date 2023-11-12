@@ -1,36 +1,50 @@
-import { toast } from "react-toastify";
+import { useState } from "react";
 
 import { BaseLayout, Button, FlowChartQuestion } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
 import { flowChartOptionsButtonsClassName } from "..";
 
+const contentStyle = {
+  background: "url(/laringoscope.png) no-repeat center center",
+  backgroundSize: "contain",
+};
+
 export const AfterAnesthesicInduction: React.FC = () => {
   const { goBack, goToLaryngealMask } = useRoutes();
+  const [showText, setShowText] = useState(false);
 
-  const onClick = () => {
-    toast.success("Respirador");
-  };
+  const onClick = () => setShowText(true);
 
   return (
     <BaseLayout.Root>
-      <BaseLayout.Content className="!justify-around !h-[75%]">
-        <p className="text-[1rem] lg:px-0 px-5">
+      <BaseLayout.Content
+        className="!justify-between !h-[80%]"
+        style={contentStyle}
+      >
+        <p className="text-[1rem] bg-[#90C7BEAA] rounded-[1rem] p-2">
           Intubação traqueal – máximo 3 tentativas (videolaringoscópio,
           laringoscópio tradicional, MacCoy). Capnógrafo disponível?​
         </p>
 
-        <FlowChartQuestion question="Sucesso?" />
+        <FlowChartQuestion question="Sucesso na IOT?" />
 
-        <div className="flex flex-row justify-center items-center gap-[1rem] lg:gap-[3rem]">
-          <Button
-            className={flowChartOptionsButtonsClassName}
-            onClick={onClick}
-            label="Sim"
-          />
+        <div
+          className="flex flex-row justify-center items-start gap-[1rem] lg:gap-[3rem]"
+          style={{ paddingBottom: showText ? "0" : "2rem" }}
+        >
+          <div className="flex flex-col justify-center items-center gap-[0.5rem]">
+            <Button
+              className={`${flowChartOptionsButtonsClassName} opacity-[0.6]`}
+              onClick={onClick}
+              label="Sim"
+            />
+
+            {showText && <p>Respirador</p>}
+          </div>
 
           <Button
-            className={flowChartOptionsButtonsClassName}
+            className={`${flowChartOptionsButtonsClassName} opacity-[0.6]`}
             onClick={goToLaryngealMask}
             label="Não"
           />
