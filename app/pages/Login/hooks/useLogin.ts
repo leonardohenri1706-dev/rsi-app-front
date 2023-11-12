@@ -17,7 +17,7 @@ type LoginErrorType = keyof typeof LoginErrorMessages;
 const defaultErrorMessage = "Falha ao realizar login!";
 
 export const useLogin = () => {
-  const { goToRespiratoryTractCheckUp } = useRoutes();
+  const { goToDifficultIntubation } = useRoutes();
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -46,7 +46,7 @@ export const useLogin = () => {
 
       window.localStorage.setItem("token", token);
 
-      setTimeout(() => goToRespiratoryTractCheckUp(), 1000);
+      setTimeout(() => goToDifficultIntubation(), 1000);
     } catch (err) {
       const error = err as AxiosError<ApiError<LoginErrorType>>;
       const { type = "" } =
