@@ -16,22 +16,17 @@ export const clipBoardStyling = {
 };
 
 export const Clipboard = ({ children }: Props) => {
-  const { title: contextTitle } = usePageContext();
-
-  const isCover = contextTitle === "Capa";
-  const title = isCover ? "Login" : contextTitle;
-
   return (
     <div
       className={`${clipBoardStyling.className} w-full h-full z-[3]`}
       style={clipBoardStyling.style}
     >
-      <div
+      {/* <div
         className={`
-          absolute -top-[2.5rem] left-[50%] transform translate-x-[-50%]
+          absolute lg:-top-[2.5rem] -top-[1.75rem] left-[50%] transform translate-x-[-50%]
+          lg:w-[25rem] lg:h-[5rem] w-[80vw] h-[3rem]
           flex justify-center items-center
           border border-1 border-black
-          w-[25rem] h-[5rem]
           bg-[#e6e6e6]
           rounded-full
         `}
@@ -39,11 +34,11 @@ export const Clipboard = ({ children }: Props) => {
       >
         <div
           className={`
-            absolute left-[50%] transform translate-x-[-50%] -top-[2.25rem]
+            absolute left-[50%] transform translate-x-[-50%] lg:-top-[2.25rem] -top-[2rem]
             border border-1 border-black border-b-0
             flex justify-center items-center
             rounded-b-none rounded-t-[2rem]
-            w-[8.3rem] h-[2.25rem]
+            w-[8.3rem] lg:h-[2.25rem] h-[2rem]
             bg-[#e6e6e6]
           `}
         >
@@ -52,11 +47,7 @@ export const Clipboard = ({ children }: Props) => {
             className="w-[1.25rem] h-[1.25rem] rounded-full bg-[#00c9aa] mt-[0.5rem] border border-black"
           />
         </div>
-
-        <p className="text-[0.9rem] font-bold uppercase text-[#01584B]">
-          {title.toUpperCase()}
-        </p>
-      </div>
+      </div> */}
 
       {children}
     </div>
