@@ -17,7 +17,7 @@ type RegistrationErrorType = keyof typeof RegistrationErrorMessages;
 const defaultErrorMessage = "Falha ao realizar cadastro!";
 
 export const useRegistration = () => {
-  const { goToRespiratoryTractCheckUp } = useRoutes();
+  const { goToDifficultIntubation } = useRoutes();
 
   const [data, setData] = useState<RegistrationBody | null>(null);
 
@@ -45,7 +45,7 @@ export const useRegistration = () => {
 
       window.localStorage.setItem("token", token);
 
-      setTimeout(() => goToRespiratoryTractCheckUp(), 1000);
+      setTimeout(() => goToDifficultIntubation(), 1000);
     } catch (err) {
       const error = err as AxiosError<ApiError<RegistrationErrorType>>;
       const { type = "" } =
