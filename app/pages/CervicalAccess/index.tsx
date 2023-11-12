@@ -1,3 +1,5 @@
+import { BsCameraVideo } from "react-icons/bs";
+
 import { BaseLayout, Button } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
@@ -7,7 +9,7 @@ const listItems: string[] = [
 ];
 
 export const CervicalAccess: React.FC = () => {
-  const { goBack, goToCervicalAccessVideo } = useRoutes();
+  const { goToLaryngealMask, goToCervicalAccessVideo } = useRoutes();
 
   const renderListItems = listItems.map((item, index) => (
     <li key={index} className="text-black">
@@ -33,14 +35,20 @@ export const CervicalAccess: React.FC = () => {
             </li>
           </ul>
         </div>
-
-        {/* <Button onClick={onClickOnVideo} label="Veja o vídeo" /> */}
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goBack} label="Voltar" />
+        <Button onClick={goToLaryngealMask} label="Voltar" />
 
-        <Button onClick={goToCervicalAccessVideo} label="Próximo" />
+        <Button
+          onClick={goToCervicalAccessVideo}
+          label={
+            <span className="flex flex-row items-center">
+              <BsCameraVideo size={20} className="mr-2" />
+              Veja o vídeo
+            </span>
+          }
+        />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
