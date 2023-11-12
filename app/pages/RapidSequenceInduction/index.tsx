@@ -12,7 +12,7 @@ export const RapidSequenceInduction: React.FC = () => {
 
   return (
     <BaseLayout.Root>
-      <BaseLayout.Content className="!justify-around !h-[79%] !lg:h-[79%] !pt-[0rem] !lg:pt-[1rem] !pb-0 text-black text-[0.875rem] px-5 lg:px-2 !overflow-y-hidden">
+      <BaseLayout.Content className="!justify-around !h-[79%] !lg:h-[79%] !pt-[0.5rem] !lg:pt-[1rem] !pb-0 text-black text-[0.875rem] px-5 lg:px-2 !overflow-y-hidden">
         <ol className="flex flex-col w-full h-full gap-[1rem] list-decimal overflow-y-auto pt-[1rem]">
           {renderListItems}
         </ol>
