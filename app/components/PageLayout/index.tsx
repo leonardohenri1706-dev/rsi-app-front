@@ -34,7 +34,7 @@ const PageLayoutWithoutContext: React.FC<Props> = ({ isPrivate, children }) => {
   return (
     <Background>
       <div className="flex w-screen h-screen justify-center items-center">
-        <div className="flex flex-col justify-start items-center relative w-full lg:w-[35rem] md:lg:h-[40rem] h-[80%]">
+        <div className="flex flex-col justify-start items-center relative w-full lg:w-[35rem] md:lg:h-[40rem] lg:h-[80%] h-full">
           {/* <Menu /> */}
 
           <Clipboard>
@@ -44,7 +44,7 @@ const PageLayoutWithoutContext: React.FC<Props> = ({ isPrivate, children }) => {
 
             <LogoOnClipboard />
 
-            <div className="absolute left-1/2 transform -translate-x-1/2 top-[8rem] w-full h-[80%] overflow-y-auto overflow-x-hidden z-[3]">
+            <div className="absolute left-1/2 transform -translate-x-1/2 top-[8rem] w-full h-[80%] overflow-hidden z-[3]">
               {children}
             </div>
           </Clipboard>
