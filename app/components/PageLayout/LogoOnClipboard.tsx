@@ -15,9 +15,9 @@ const useTopClass = () => {
   const isCover = title === "Capa";
   const isLoginPage = title === "Login";
 
-  if (isCover) return "top-[5rem]";
+  if (isCover) return "top-[4rem]";
 
-  if (isLoginPage) return "top-[5rem]";
+  if (isLoginPage) return "top-[2rem]";
 
   return "top-[1.5rem]";
 };
@@ -38,13 +38,13 @@ export const LogoOnClipboard: React.FC<Props> = ({
   const isCover = contextTitle === "Capa";
   if (isCover && !show) return null;
 
-  const title = isCover ? "Login" : contextTitle;
+  const title = isCover ? "" : contextTitle;
 
   return (
     <div
-      className={`absolute left-1/2 transform -translate-x-1/2 ${topClass} flex flex-col justify-center items-center w-full gap-[1rem]`}
+      className={`absolute left-1/2 transform -translate-x-1/2 ${topClass} flex flex-col justify-center items-center w-full gap-[1rem] px-1`}
     >
-      <p className="text-[0.9rem] font-bold uppercase text-[#01584B]">
+      <p className="lg:text-[0.9rem] text-[0.8rem] font-bold uppercase text-[#01584B]">
         {title.toUpperCase()}
       </p>
 
