@@ -63,7 +63,7 @@ export const Registration: React.FC = () => {
       <BaseLayout.Buttons>
         <Button onClick={goToLogin} label="Voltar" />
 
-        <Button onClick={doRegistration} label="Entrar" />
+        <Button onClick={doRegistration} label="Cadastrar" />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
