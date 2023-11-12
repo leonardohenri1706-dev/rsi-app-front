@@ -4,7 +4,7 @@ import { BaseLayout, Button, FlowChartQuestion } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
 export const optionsButtonsClassName =
-  "!md:lg:w-[24rem] !md:lg:h-[8rem] !w-[13rem] !h-[5rem] !text-[0.75rem] opacity-[0.75]";
+  "!md:lg:w-[24rem] !md:lg:h-[8rem] !w-[9.5rem] !h-[5rem] !text-[0.7rem] opacity-[0.75]";
 
 const contentStyle = {
   background: "url(/laryngeal-mask.png) no-repeat center center",
@@ -26,30 +26,30 @@ export const LaryngealMask: React.FC = () => {
           style={contentStyle}
         />
 
-        <p className="text-[1rem] bg-[#90C7BEAA] rounded-[1rem] p-2">
+        <p className="bg-[#90C7BEAA] rounded-[1rem] p-2 lg:text-[1rem] text-[0.8rem]">
           3 tentativas com modelos/tamanhos diferentes​
         </p>
 
         <FlowChartQuestion question="Resultado após máscara laríngea?" />
 
         <div
-          className="flex flex-row justify-center items-start gap-[1rem] lg:gap-[3rem]"
+          className="flex flex-row justify-around items-start gap-[0.5rem] lg:gap-[3rem]"
           style={{ paddingBottom: showText ? "0" : "2rem" }}
         >
-          <div className="flex flex-col justify-center items-center gap-[0.5rem]">
+          <div className="flex flex-col justify-around items-center gap-[0.5rem]">
             <Button
+              label="Sucesso ou insucesso com boa ventilação por máscara"
               className={optionsButtonsClassName}
               onClick={onClick}
-              label="Sucesso ou insucesso com boa ventilação por máscara"
             />
 
             {showText && <p>Parar e pensar</p>}
           </div>
 
           <Button
+            label="Insucesso com não-ventilo, não-intubo"
             className={optionsButtonsClassName}
             onClick={goToCervicalAccess}
-            label="Insucesso com não-ventilo, não-intubo"
           />
         </div>
       </BaseLayout.Content>
