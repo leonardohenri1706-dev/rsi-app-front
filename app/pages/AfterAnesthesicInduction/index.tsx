@@ -22,7 +22,7 @@ export const AfterAnesthesicInduction: React.FC = () => {
         className="!justify-between !h-[80%]"
         style={contentStyle}
       >
-        <p className="text-[1rem] bg-[#90C7BEAA] rounded-[1rem] p-2">
+        <p className="bg-[#90C7BEAA] rounded-[1rem] p-2 lg:text-[1rem] text-[0.8rem]">
           Intubação traqueal – máximo 3 tentativas (videolaringoscópio,
           laringoscópio tradicional, MacCoy). Capnógrafo disponível?​
         </p>
@@ -33,9 +33,9 @@ export const AfterAnesthesicInduction: React.FC = () => {
           className="flex flex-row justify-center items-start gap-[1rem] lg:gap-[3rem]"
           style={{ paddingBottom: showText ? "0" : "2rem" }}
         >
-          <div className="flex flex-col justify-center items-center gap-[0.5rem]">
+          <div className="flex flex-col justify-around items-center gap-[0.5rem]">
             <Button
-              className={`${flowChartOptionsButtonsClassName} opacity-[0.6]`}
+              className={`${flowChartOptionsButtonsClassName} opacity-[0.7]`}
               onClick={onClick}
               label="Sim"
             />
@@ -44,7 +44,7 @@ export const AfterAnesthesicInduction: React.FC = () => {
           </div>
 
           <Button
-            className={`${flowChartOptionsButtonsClassName} opacity-[0.6]`}
+            className={`${flowChartOptionsButtonsClassName} opacity-[0.7]`}
             onClick={goToLaryngealMask}
             label="Não"
           />
