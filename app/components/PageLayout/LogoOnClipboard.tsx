@@ -17,9 +17,9 @@ const useTopClass = () => {
 
   if (isCover) return "top-[4rem]";
 
-  if (isLoginPage) return "top-[2rem]";
+  if (isLoginPage) return "top-[0.75rem]";
 
-  return "top-[1.5rem]";
+  return "top-[0.75rem]";
 };
 
 interface Props {
@@ -44,7 +44,7 @@ export const LogoOnClipboard: React.FC<Props> = ({
     <div
       className={`absolute left-1/2 transform -translate-x-1/2 ${topClass} flex flex-col justify-center items-center w-full gap-[1rem] px-1`}
     >
-      <p className="lg:text-[0.9rem] text-[0.8rem] font-bold uppercase text-[#01584B]">
+      <p className="lg:text-[0.9rem] text-[0.8rem] font-bold uppercase text-[#01584B] max-w-[14rem] lg:max-w-none text-center h-[2.5rem] flex items-center">
         {title.toUpperCase()}
       </p>
 
