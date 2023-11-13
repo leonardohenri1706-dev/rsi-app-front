@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import { InputWithLabel, BaseLayout, Button } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
@@ -9,6 +7,10 @@ export const Login: React.FC = () => {
   const { goToForgotPassword, goToRegistration } = useRoutes();
 
   const { email, doLogin, password, setEmail, setPassword } = useLogin();
+
+  const passwordOnKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") doLogin();
+  };
 
   return (
     <BaseLayout.Root>
@@ -21,6 +23,7 @@ export const Login: React.FC = () => {
         />
 
         <InputWithLabel
+          onKeyDown={passwordOnKeyDown}
           placeholder="Preencha sua senha"
           onChange={setPassword}
           value={password}
