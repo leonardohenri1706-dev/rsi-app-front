@@ -34,17 +34,17 @@ export const Menu: React.FC = () => {
     <div
       className={`
         ${clipBoardStyling.className} ${zIndexClassName}
-        !w-full md:lg:!w-[25rem] h-[38rem] md:!h-[36rem] !lg:h-[30rem] !absolute
-        lg:top-[2.5rem] md:top-[6rem] top-[6rem]
+        !w-full md:lg:!w-[25rem] !h-[80dvh] lg:!h-[35rem] !absolute
+        lg:top-[2.5rem] md:top-[6rem] top-[3rem]
         lg:left-[5rem] left-[0]
         ${menuOpenClassName} duration-500 transition-[transform]
         py-[1rem] pl-[1rem] ${paddingRightClassName}
         flex flex-col justify-start items-center
         text-black
       `}
-      style={clipBoardStyling.style}
+      style={{ ...clipBoardStyling.style }}
     >
-      <b className="text-[1.5rem] font-bold uppercase mb-[1rem] text-center w-full">
+      <b className="text-[1rem] lg:text-[1.5rem] font-bold uppercase mb-[1rem] text-center w-full">
         Índice
       </b>
 
