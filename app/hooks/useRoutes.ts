@@ -53,7 +53,8 @@ export const useRoutes = (): Return => {
         window.location.pathname
       );
 
-      if (shouldSetLastPage) setLastPage(window.location.pathname);
+      if (shouldSetLastPage)
+        setLastPage((p) => [...p, window.location.pathname]);
 
       navigate(path);
     };
@@ -61,7 +62,10 @@ export const useRoutes = (): Return => {
     return routes;
   }, {} as Return);
 
-  routes.goBack = () => navigate(lastPage);
+  routes.goBack = () => {
+    navigate(lastPage[lastPage.length - 1]);
+    setLastPage((p) => p.slice(0, p.length - 1));
+  };
 
   return routes;
 };

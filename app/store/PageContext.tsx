@@ -7,8 +7,8 @@ interface PageContextProps {
   title: string;
   setMenuIsOpen: Dispatch<SetStateAction<boolean>>;
   menuIsOpen: boolean;
-  setLastPage: Dispatch<SetStateAction<string>>;
-  lastPage: string;
+  setLastPage: Dispatch<SetStateAction<string[]>>;
+  lastPage: string[];
 }
 
 export const PageContext = createContext({} as PageContextProps);
@@ -35,7 +35,7 @@ export enum PatientTypeEnum {
 const PageContextProvider: React.FC<Props> = ({ children, title }) => {
   const [patientType, setPatientType] = useState<PatientTypeEnum | null>(null);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
-  const [lastPage, setLastPage] = useState<string>("");
+  const [lastPage, setLastPage] = useState<string[]>([]);
 
   const value: PageContextProps = {
     title,
