@@ -5,12 +5,25 @@ import { ListItem } from "../RapidSequenceInduction/ListItem";
 import { listItems } from "./listItems";
 
 export const AwakeIntubation: React.FC = () => {
-  const { goBack, goToAfterAnesthesicInduction, goToRapidSequenceInduction } =
-    useRoutes();
+  const {
+    goToAfterAnesthesicInduction,
+    goToRapidSequenceInduction,
+    goToDifficultVentilation,
+  } = useRoutes();
 
   const renderListItems = listItems.map((item, index) => (
     <ListItem key={index} item={item} index={index} />
   ));
+
+  const onClickOnNotSuccess = () => {
+    localStorage.setItem("awakeIntubationNotASuccess", "true");
+    goToRapidSequenceInduction();
+  };
+
+  const onClickOnNext = () => {
+    localStorage.setItem("awakeIntubationNotASuccess", "false");
+    goToAfterAnesthesicInduction();
+  };
 
   return (
     <BaseLayout.Root>
@@ -19,13 +32,13 @@ export const AwakeIntubation: React.FC = () => {
           {renderListItems}
         </ol>
 
-        <Button onClick={goToRapidSequenceInduction} label="Insucesso?" />
+        <Button onClick={onClickOnNotSuccess} label="Insucesso?" />
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goBack} label="Voltar" />
+        <Button onClick={goToDifficultVentilation} label="Voltar" />
 
-        <Button onClick={goToAfterAnesthesicInduction} label="Próximo" />
+        <Button onClick={onClickOnNext} label="Próximo" />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
