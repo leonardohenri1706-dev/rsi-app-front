@@ -33,6 +33,13 @@ interface Return {
   goToReferences: () => void;
 }
 
+const pathsThatShouldSetLastPage = [
+  "/difficult-intubation",
+  "/difficult-ventilation",
+  "/rapid-sequence-induction",
+  "/awake-intubation",
+];
+
 export const useRoutes = (): Return => {
   const { setLastPage, lastPage } = usePageContext();
   const navigate = useNavigate();
@@ -42,7 +49,12 @@ export const useRoutes = (): Return => {
     const routerName = page.routerName as keyof Return;
 
     routes[routerName] = () => {
-      setLastPage(window.location.pathname);
+      const shouldSetLastPage = pathsThatShouldSetLastPage.includes(
+        window.location.pathname
+      );
+
+      if (shouldSetLastPage) setLastPage(window.location.pathname);
+
       navigate(path);
     };
 

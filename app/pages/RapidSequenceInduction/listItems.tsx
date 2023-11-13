@@ -36,6 +36,6 @@ export const listItems: ListItemProps[] = [
     ),
   },
   {
-    text: "Intubação traqueal (IOT) 3x máscara laríngea (ML); 3x crico se dessaturação​",
+    text: "Intubação traqueal (IOT) 3x; máscara laríngea (ML) 3x; crico se dessaturação​",
   },
 ];
