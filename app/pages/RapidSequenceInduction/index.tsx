@@ -3,8 +3,27 @@ import { useRoutes } from "@/app/hooks";
 import { listItems } from "./listItems";
 import { ListItem } from "./ListItem";
 
+const useGoToLastPage = () => {
+  const {
+    goToDifficultVentilation,
+    goToDifficultIntubation,
+    goToAwakeIntubation,
+  } = useRoutes();
+
+  return () => {
+    const difficultIntubation = localStorage.getItem("isDifficultIntubation");
+    if (difficultIntubation === "false") return goToDifficultIntubation();
+
+    const difficultVentilation = localStorage.getItem("isDifficultVentilation");
+    if (difficultVentilation === "false") return goToDifficultVentilation();
+
+    return goToAwakeIntubation();
+  };
+};
+
 export const RapidSequenceInduction: React.FC = () => {
-  const { goBack, goToAfterAnesthesicInduction } = useRoutes();
+  const { goToAfterAnesthesicInduction } = useRoutes();
+  const goToLastPage = useGoToLastPage();
 
   const renderListItems = listItems.map((item, index) => (
     <ListItem key={index} item={item} index={index} />
@@ -19,7 +38,7 @@ export const RapidSequenceInduction: React.FC = () => {
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goBack} label="Voltar" />
+        <Button onClick={goToLastPage} label="Voltar" />
 
         <Button onClick={goToAfterAnesthesicInduction} label="Próximo" />
       </BaseLayout.Buttons>
