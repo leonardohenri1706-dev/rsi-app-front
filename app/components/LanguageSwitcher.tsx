@@ -23,7 +23,7 @@ export default function LanguageSwitcher() {
       onClick={switchLanguage}
       style={{
         position: "fixed",
-        top: 16,
+        bottom: 16,
         right: 16,
         zIndex: 1000,
         background: "none",

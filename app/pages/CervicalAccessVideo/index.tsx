@@ -4,7 +4,7 @@ import { BaseLayout, Button } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
 export const CervicalAccessVideo: React.FC = () => {
-  const { goToSummaryVideo, goToCervicalAccess } = useRoutes();
+  const { goToWhatAboutAnesthetists, goToCervicalAccess } = useRoutes();
   const { t } = useTranslation("common");
 
   return (
@@ -18,7 +18,10 @@ export const CervicalAccessVideo: React.FC = () => {
       <BaseLayout.Buttons>
         <Button onClick={goToCervicalAccess} label={t("Navigation.GoBack")} />
 
-        <Button onClick={goToSummaryVideo} label={t("Navigation.Next")} />
+        <Button
+          onClick={goToWhatAboutAnesthetists}
+          label={t("Navigation.Next")}
+        />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );

@@ -26,7 +26,9 @@ export const DifficultVentilation: React.FC = () => {
   return (
     <BaseLayout.Root>
       <BaseLayout.Content className="!justify-around !h-[75%]">
-        <FlowChartQuestion question={t("DifficultVentilation.Question")} />
+        <FlowChartQuestion
+          question={t("Pages.DifficultVentilation.Question")}
+        />
 
         <div className="flex flex-row justify-center items-center lg:gap-[3rem] gap-[1.5rem]">
           <Button

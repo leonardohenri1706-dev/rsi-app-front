@@ -3,7 +3,7 @@ import { useRoutes } from "@/app/hooks";
 import { useTranslation } from "react-i18next";
 
 export const WhatAboutAnesthetists: React.FC = () => {
-  const { goToSummaryVideo, goToAboutTheAuthor } = useRoutes();
+  const { goToCervicalAccessVideo, goToAboutTheAuthor } = useRoutes();
   const { t } = useTranslation("common");
 
   return (
@@ -17,7 +17,10 @@ export const WhatAboutAnesthetists: React.FC = () => {
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goToSummaryVideo} label={t("Navigation.GoBack")} />
+        <Button
+          onClick={goToCervicalAccessVideo}
+          label={t("Navigation.GoBack")}
+        />
 
         <Button onClick={goToAboutTheAuthor} label={t("Navigation.Next")} />
       </BaseLayout.Buttons>
