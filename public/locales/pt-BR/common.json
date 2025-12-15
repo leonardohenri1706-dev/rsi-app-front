@@ -36,7 +36,7 @@
       "Name": "Plínio Holanda - Anestesista"
     },
     "AfterAnesthesicInduction": {
-      "Content": "Intubação traqueal – máximo 3 tentativas (videolaringoscópio,\nlaringoscópio tradicional, MacCoy). Capnógrafo disponível?​",
+      "Content": "Intubação traqueal – máximo 3 tentativas (VIDEOLARINGOSCÓPIO,\nlaringoscópio tradicional, MacCoy). Capnógrafo disponível?​",
       "FlowChartQuestion": "Sucesso na IOT?",
       "Yes": "Sim",
       "No": "Não",

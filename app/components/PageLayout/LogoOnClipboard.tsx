@@ -42,7 +42,7 @@ export const LogoOnClipboard: React.FC<Props> = ({
 
   return (
     <div
-      className={`absolute left-1/2 transform -translate-x-1/2 ${topClass} flex flex-col justify-center items-center w-full gap-[1rem] px-1`}
+      className={`absolute left-1/2 transform -translate-x-1/2 ${topClass} flex flex-col justify-center items-center w-full gap-[1rem] px-1 pointer-events-none`}
     >
       <p className="lg:text-[0.9rem] text-[0.8rem] font-bold uppercase text-[#01584B] max-w-[14rem] lg:max-w-none text-center h-[2.5rem] flex items-center">
         {title.toUpperCase()}

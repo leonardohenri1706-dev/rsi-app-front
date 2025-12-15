@@ -35,33 +35,29 @@ export const useLogin = () => {
       return;
     }
 
-    const loginPromise = login({ email, password });
+    // MOCK LOGIN FOR DEVELOPMENT
+    // const loginPromise = login({ email, password });
 
-    toast.promise(loginPromise, {
-      success: t("Pages.Login.Success"),
-      pending: t("Pages.Login.Pending"),
-    });
+    // toast.promise(loginPromise, {
+    //   success: t("Pages.Login.Success"),
+    //   pending: t("Pages.Login.Pending"),
+    // });
 
+    // Mocking success
     try {
-      const { token } = await loginPromise;
+      toast.info("Mock Login - Bypassing Backend");
 
+      // Simulate network delay
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      const token = "mock-token-12345";
       window.localStorage.setItem("token", token);
 
-      setTimeout(() => goToDifficultIntubation(), 1000);
+      toast.success(t("Pages.Login.Success"));
+      goToDifficultIntubation();
+
     } catch (err) {
-      const error = err as AxiosError<ApiError<LoginErrorType>>;
-      const { type = "" } =
-        error.response?.data || ({} as ApiError<LoginErrorType>);
-
-      const isKnownError = Object.keys(ErrorMessages).includes(
-        type as LoginErrorType
-      );
-
-      const errorMessage = isKnownError
-        ? ErrorMessages[type as LoginErrorType]
-        : defaultErrorMessage;
-
-      toast.error(errorMessage);
+      toast.error(defaultErrorMessage);
     }
   };
 
