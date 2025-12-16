@@ -1,4 +1,4 @@
 export { SendMailService } from "./SendMailService";
-export { MongoDbService } from "./MongoDbService";
+export { MongoService } from "./MongoService";
 export { CryptoService } from "./CryptoService";
 export { JwtService } from "./JwtService";

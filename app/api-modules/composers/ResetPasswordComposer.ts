@@ -1,5 +1,5 @@
 import {
-  MongoDbService,
+  MongoService,
   UserRepository,
   CryptoService,
   JwtService,
@@ -9,7 +9,7 @@ import { ResetPasswordUseCase } from "../applications";
 export class ResetPasswordComposer {
   static async compose() {
     return new ResetPasswordUseCase(
-      new UserRepository(await MongoDbService.getDb()),
+      new UserRepository(await MongoService.getDb()),
       new CryptoService(),
       new JwtService()
     );
