@@ -7,7 +7,7 @@ import { useRoutes } from "@/app/hooks";
 import { flowChartOptionsButtonsClassName } from "..";
 
 const contentStyle = {
-  background: "url(/laringoscope.png) no-repeat center center",
+  background: "url(/videolaryngoscope.jpg) no-repeat center center",
   backgroundSize: "contain",
 };
 
@@ -26,6 +26,11 @@ export const AfterAnesthesicInduction: React.FC = () => {
       >
         <p className="bg-[#90C7BEAA] rounded-[1rem] p-2 lg:text-[1rem] text-[0.8rem]">
           {t("Pages.AfterAnesthesicInduction.Content")}
+        </p>
+
+        {/* Caption for the Videolaryngoscope */}
+        <p className="absolute left-1/2 transform -translate-x-1/2 top-1/2 mt-[8rem] text-sm font-bold text-gray-600 bg-white/50 px-2 rounded">
+          Penlon®
         </p>
 
         <FlowChartQuestion

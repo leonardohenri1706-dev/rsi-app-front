@@ -17,7 +17,7 @@ export const Login: React.FC = () => {
 
   return (
     <BaseLayout.Root>
-      <BaseLayout.Content className="!pt-[6rem]">
+      <BaseLayout.Content className="!pt-[2rem]">
         <InputWithLabel
           placeholder={t("Pages.Login.Input.Email.Placeholder")}
           onChange={setEmail}

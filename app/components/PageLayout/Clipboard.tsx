@@ -7,10 +7,10 @@ interface Props {
 export const clipBoardStyling = {
   className: `
     border border-1 border-black rounded-[40px] relative
-    padding-[40px 70px 30px 70px]
     bg-[#e6e6e6] 
   `,
   style: {
+    padding: "40px 70px 30px 70px",
     boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
   },
 };

@@ -7,19 +7,17 @@ const {
   SMTP_MAIL: user = "",
 } = process.env;
 
-const smtpConfig: SMTPTransport.Options = {
-  service,
-  auth: { user, pass },
-};
-
 export class SendMailService {
-  private transporter = nodemailer.createTransport(smtpConfig);
-
   public async sendMail(
     to: string,
     subject: string,
     html: string
   ): Promise<void> {
-    await this.transporter.sendMail({ from: user, to, subject, html });
+    const transporter = nodemailer.createTransport({
+      service,
+      auth: { user, pass },
+    });
+
+    await transporter.sendMail({ from: user, to, subject, html });
   }
 }

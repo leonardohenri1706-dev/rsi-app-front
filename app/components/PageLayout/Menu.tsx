@@ -1,3 +1,4 @@
+import React from "react";
 import { usePageContext } from "@/app/store";
 import { useWindowSize } from "@/app/hooks";
 import pages from "@/app/routes";
@@ -8,41 +9,41 @@ import { useTranslation } from "react-i18next";
 
 const indexedPages = pages.filter((page) => page.indexed);
 
-const getMenuOpenClassName = (
-  menuIsOpen: boolean,
-  isMediumOrSmaller: boolean
-) => {
-  if (isMediumOrSmaller)
-    return menuIsOpen ? "translate-x-0" : "-translate-x-full";
-
-  return menuIsOpen ? "-translate-x-full" : "translate-x-0";
-};
-
 export const Menu: React.FC = () => {
   const { isMediumOrSmaller } = useWindowSize();
   const { menuIsOpen } = usePageContext();
   const { t } = useTranslation("common");
 
-  const menuOpenClassName = getMenuOpenClassName(menuIsOpen, isMediumOrSmaller);
+  // Simplified logic:
+  // Mobile: Translate 0 (visible) or -full (hidden).
+  // Desktop: Translate 0 (visible) or -full (hidden).
+  // ALWAYS Z-Index high to be seen.
+
+  const isOpen = menuIsOpen;
+
+  const transformClass = isOpen ? "translate-x-0" : "-translate-x-full";
 
   const renderIndexItems = indexedPages.map((page) => (
     <MenuIndexItem page={page} key={page.path} />
   ));
 
-  const zIndexClassName = isMediumOrSmaller ? "!z-[5]" : "!z-[1]";
-  const paddingRightClassName = isMediumOrSmaller ? "pr-[1rem]" : "pr-[5rem]";
-
   return (
     <div
       className={`
-        ${clipBoardStyling.className} ${zIndexClassName}
-        !w-full md:lg:!w-[25rem] !h-[80dvh] lg:!h-[35rem] !absolute
-        lg:top-[2.5rem] md:top-[6rem] top-[3rem]
-        lg:left-[5rem] left-[0]
-        ${menuOpenClassName} duration-500 transition-[transform]
-        py-[1rem] pl-[1rem] ${paddingRightClassName}
+        ${clipBoardStyling.className} 
+        !z-[50]
+        fixed lg:absolute
+        top-0 left-0
+        !h-[100dvh] lg:!h-[35rem]
+        !w-[80vw] lg:!w-[25rem]
+        lg:top-[2.5rem]
+        lg:left-[5rem]
+        ${transformClass} 
+        duration-500 transition-transform
+        py-[1rem] pl-[1rem] pr-[1rem]
         flex flex-col justify-start items-center
         text-black
+        shadow-2xl
       `}
       style={{ ...clipBoardStyling.style }}
     >
